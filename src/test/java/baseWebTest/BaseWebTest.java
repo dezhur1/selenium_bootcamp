@@ -15,9 +15,9 @@ public class BaseWebTest {
     @BeforeClass
     public void setUp() {
         //instead of add whole path, we can get path by using System.getProperty
-        String userdirLib =  System.getProperty("user.dir") + "\\lib\\";
+//        String userdirLib =  System.getProperty("user.dir") + "\\lib\\";
         //path to driver .exe file
-        System.setProperty("webdriver.chrome.driver", userdirLib + "chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/Users/Igor/IdeaProjects/selenium_bootcamp/lib/chromedriver");
         //initializing driver
         this.driver = new ChromeDriver();
         // maximizing browser window
