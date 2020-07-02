@@ -35,6 +35,6 @@ public class BaseWebTest {
     @AfterClass
     public void closeBrowser() {
         Assertions.assertNotNull(driver, "Window already closed");
-        driver.quit();
+//        driver.quit();
     }
 }

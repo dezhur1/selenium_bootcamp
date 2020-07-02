@@ -22,20 +22,37 @@ public class ChapterOnePage extends BaseFunc {
     @FindBy(how=How.CLASS_NAME, using = "multiplewindow")
     private WebElement seleniumText;
 
+    @FindBy(how = How.CSS, using ="[id='selecttype']")
+    private WebElement selectTypeDD;
+
     public void setTextBox(String textToSend){
         textBox.clear();
         textBox.sendKeys(textToSend);
     }
-    public void getTextOfWindowLink() {
+    public String getTextOfTextBox() {                           //for assertion
+        return textBox.getText();
+    }
+
+    public String getTextOfWindowLink() {
         String text = windowLink.getText();
         System.out.println(text);
+        return text;
     }
+
+
     public void printAttributeOfVerifyButton() {
         String value = verifyButton.getAttribute("value");
         System.out.println(value);
     }
-    public void printCssValueguide(){
-        System.out.println(seleniumText.getCssValue("color"));
+//    public String getAttributeOfVerifyButton() {                 //for assertion
+//        return verifyButton.getAttribute("value");
+//    }
+
+    public String printCssValueguide(){
+        return seleniumText.getCssValue("color");
+    }
+    public void setSelectTypeDD(String optionName){
+        sellectByVisibleText(selectTypeDD, optionName );
     }
 
 
